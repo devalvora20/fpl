@@ -1,0 +1,33 @@
+.root {
+    margin: 20px;
+}
+
+.winnerCell {
+    background-color:green; 
+    color: white !important;
+}
+
+
+.teamGrid {
+    padding: 20;
+}
+
+
+.MuiAvatar-img {
+    width: auto !important;
+}
+
+.played {
+    border: 2px solid green !important;
+}
+
+.yetToPlay {
+    border: 2px solid orange !important;
+}
+
+.MuiBadge-badge {
+    width: 17px!important;
+    height: 14px!important;
+    min-width: 10px !important;
+    background-color: green !important;
+}
