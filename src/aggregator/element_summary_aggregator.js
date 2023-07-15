@@ -5,6 +5,7 @@ export class ElementSummaryAggregator {
         let elementSummaryCallable = new ElementSummaryCallable();
         let selectedPlayers = this.getSelectedPlayerElements(data);
         let promises = [];
+        
         selectedPlayers.forEach(id => {
             promises.push(elementSummaryCallable.getElementSummary(id));
         })

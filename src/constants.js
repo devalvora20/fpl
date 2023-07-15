@@ -1,11 +1,17 @@
-export const BASE_URL = "https://rocky-escarpment-50097.herokuapp.com/http://fantasy.premierleague.com/api/";
+export const BACKEND_PROXY_URL = "https://punterss-backend.onrender.com";
+export const FANTASY_BASE_URL = "http://fantasy.premierleague.com/api/";
 export const DEVAL_MANAGER_ID = 3251781;
 export const PANNU_MANAGER_ID = 3250650;
-export const DHAVAL_MANAGER_ID = 3866656; 
-export const RISHAB_MANAGER_ID = 3198365;
+export const RISHAB_MANAGER_ID = 3866656; 
+export const DHAVAL_MANAGER_ID = 3198365;
 export const JIMIT_MANAGER_ID = 4150461;
 export const ABHISHEK_MANAGER_ID = 834055;
 export const SIDDHARTH_MANAGER_ID = 3866335;
+export const DEV_MANAGER_ID = 9700333;
+
+export const MAX_TRANSFERS = 6;
+
+export const FREE_WILD_CARD_GW_LIST = [17];
 
 export const MANAGER_ID_NAME_MAP = {
     3251781:"Deval",
@@ -14,11 +20,11 @@ export const MANAGER_ID_NAME_MAP = {
     3198365:"Dhaval",
     4150461:"Jimit",
     3866335:"Siddharth",
-    834055:"Abhishek"
+    834055:"Abhishek",
+    9700333:"Dev",
 }
-export const MANAGERS = [DEVAL_MANAGER_ID, PANNU_MANAGER_ID, DHAVAL_MANAGER_ID, RISHAB_MANAGER_ID, JIMIT_MANAGER_ID, ABHISHEK_MANAGER_ID, SIDDHARTH_MANAGER_ID];
-
-
+export const MANAGERS = [ABHISHEK_MANAGER_ID, DEV_MANAGER_ID, DEVAL_MANAGER_ID, DHAVAL_MANAGER_ID, JIMIT_MANAGER_ID, PANNU_MANAGER_ID, RISHAB_MANAGER_ID, SIDDHARTH_MANAGER_ID];
+// export const MANAGERS = [RISHAB_MANAGER_ID];
 
 export const TEST_AGGREGATED_HISTORY_DATA = [
     {
@@ -827,3 +833,5 @@ export const TEST_AGGREGATED_HISTORY_DATA = [
         "manager_id": 4150461
     }
 ]
+
+export const LAST_GW_NUMBER_OF_SESSIONS = [4,8,12,16,20,24,28,32,36,38]

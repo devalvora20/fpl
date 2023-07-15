@@ -4,9 +4,10 @@ import './App.css';
 import MainPointsTable from './components/main_points_table';
 import Team from './components/manager_team';
 import { EventStatusCallable } from './callable/event_status_callable';
-import { Divider } from '@material-ui/core';
-function App() {
+import { Divider, Box, CircularProgress } from '@material-ui/core';
+import PlayerChip from './components/player_chip';
 
+function App() {
   const [gw, setGw] = React.useState(null);
   React.useEffect(() => {
     let eventStatusCallable = new EventStatusCallable();
@@ -17,18 +18,32 @@ function App() {
   }, []);
 
   return (
-    gw !== null && 
+    // <div style={{display:"flex", justifyContent:"center"}}>
+    //   <b>Website is updating</b>
+    // </div>
+    
     <div>
-      <div className='root'>
-        Current Gameweek : <b>{gw}</b>
-      </div>
-      <Divider style={{ margin:20 }} />
-      <div>
-        <MainPointsTable />
-      </div>
-      <div>
-        <Team gw = {gw} />
-      </div>
+      {
+      gw !== null? (
+        <div>
+          <div className='root'>
+            Current Gameweek : <b>{gw}</b>
+          </div>
+            <Divider style={{ margin:20 }} />
+          <div>
+            <MainPointsTable />
+          </div>
+          <div>
+            <Team gw={gw}/>
+          </div>
+        </div>
+      ) :
+      (
+        <Box style={{ display: 'flex', justifyContent: 'center' }}>
+          <CircularProgress />
+         </Box>
+      )
+    }
     </div>
   );
 }
