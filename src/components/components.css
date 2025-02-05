@@ -43,3 +43,7 @@
 .chipDiv {
   margin: 5px 5px 5px 0px;
 }
+
+.MuiAccordionDetails-root{
+    display: block !important;
+}

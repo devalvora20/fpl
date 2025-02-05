@@ -47,8 +47,6 @@ export class ManagerHistoryParser {
                             }
                         }
                         
-
-                        
                         perWeekPoints[currentSeasonData["event"]-1] = current_gw_points_minus_gw_transfer_cost;
                         perWeekTransfers[currentSeasonData["event"]-1] = current_gw_transfer_cost;
                         fourWeekAgg[current_session_index] = current_session_points;

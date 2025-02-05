@@ -1,8 +1,9 @@
 import { BACKEND_PROXY_URL, FANTASY_BASE_URL } from "../constants";
 export class EventStatusCallable {
     getData = async () => {
+        
         let url = FANTASY_BASE_URL + `event-status/`;
-        const response = await fetch(BACKEND_PROXY_URL, {
+        const response = await fetch(BACKEND_PROXY_URL+url, {
             headers: {
                 'Target-URL': url,
                 'Authorization':'auth'

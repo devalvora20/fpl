@@ -3,7 +3,7 @@ export class ManagerHistoryCallable {
     getData = async (manager_id) => {
         let url = FANTASY_BASE_URL + `entry/${manager_id}/history/`;
 
-        const response = await fetch(BACKEND_PROXY_URL,{
+        const response = await fetch(BACKEND_PROXY_URL+url,{
             headers: {
                 'Target-URL': url,
                 'Authorization':'auth'

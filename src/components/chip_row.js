@@ -7,7 +7,7 @@ const playerData = bootstrapdataParser.getPlayerData();
 
 const ChipRow = props => {
 
-    props.row.sort(compare);
+    // props.row.sort(compare);
     return (
         <span style={{display:'flex', overflow:'scroll'}}>
                 

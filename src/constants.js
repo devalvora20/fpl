@@ -1,29 +1,41 @@
-export const BACKEND_PROXY_URL = "https://punterss-backend.onrender.com";
+// export const BACKEND_PROXY_URL = "https://punterss-backend.onrender.com/"; // this is for on render proxy (one with 30sec startup delay)
+export const BACKEND_PROXY_URL = " https://proxy-7lnvik65xa-uc.a.run.app/"; // This is devals' firebase proxy: https://console.firebase.google.com/u/0/project/fir-cors-reverse-proxy/usage?consoleUI=FIREBASE
 export const FANTASY_BASE_URL = "http://fantasy.premierleague.com/api/";
-export const DEVAL_MANAGER_ID = 3251781;
-export const PANNU_MANAGER_ID = 3250650;
-export const RISHAB_MANAGER_ID = 3866656; 
-export const DHAVAL_MANAGER_ID = 3198365;
-export const JIMIT_MANAGER_ID = 4150461;
-export const ABHISHEK_MANAGER_ID = 834055;
-export const SIDDHARTH_MANAGER_ID = 3866335;
-export const DEV_MANAGER_ID = 9700333;
+export const DEVAL_MANAGER_ID = 1948203;
+// export const PANNU_MANAGER_ID = 1267215;
+export const RISHAB_MANAGER_ID = 3394040; 
+export const DHAVAL_MANAGER_ID = 87023;
+export const JIMIT_MANAGER_ID = 4769889;
+export const ABHISHEK_MANAGER_ID = 767566;
+export const SIDDHARTH_MANAGER_ID = 8208357;
+export const KEVIN_MANAGER_ID = 7430815;
 
 export const MAX_TRANSFERS = 6;
 
-export const FREE_WILD_CARD_GW_LIST = [17];
+export const FREE_WILD_CARD_GW_LIST = [];
 
 export const MANAGER_ID_NAME_MAP = {
-    3251781:"Deval",
-    3250650:"Pranav",
-    3866656:"Rishab",
-    3198365:"Dhaval",
-    4150461:"Jimit",
-    3866335:"Siddharth",
-    834055:"Abhishek",
-    9700333:"Dev",
+    [DEVAL_MANAGER_ID]:"Deval",
+    // 1267215:"Pranav",
+    [RISHAB_MANAGER_ID]:"Rishab",
+    [DHAVAL_MANAGER_ID]:"Dhaval",
+    [JIMIT_MANAGER_ID]:"Jimit",
+    [ABHISHEK_MANAGER_ID]:"Abhishek",
+    [SIDDHARTH_MANAGER_ID]:"Siddharth",
+    [KEVIN_MANAGER_ID]:"Kevin"
 }
-export const MANAGERS = [ABHISHEK_MANAGER_ID, DEV_MANAGER_ID, DEVAL_MANAGER_ID, DHAVAL_MANAGER_ID, JIMIT_MANAGER_ID, PANNU_MANAGER_ID, RISHAB_MANAGER_ID, SIDDHARTH_MANAGER_ID];
+
+export const SEASON_22_23_MANAGER_ID_NAME_MAP = {
+        3251781:"Deval",
+        3250650:"Pranav",
+        3866656:"Rishab",
+        3198365:"Dhaval",
+        4150461:"Jimit",
+        3866335:"Siddharth",
+        834055:"Abhishek",
+        9700333:"Dev",
+}
+export const MANAGERS = [ABHISHEK_MANAGER_ID, DEVAL_MANAGER_ID, DHAVAL_MANAGER_ID, JIMIT_MANAGER_ID, RISHAB_MANAGER_ID, SIDDHARTH_MANAGER_ID, KEVIN_MANAGER_ID];
 // export const MANAGERS = [RISHAB_MANAGER_ID];
 
 export const TEST_AGGREGATED_HISTORY_DATA = [

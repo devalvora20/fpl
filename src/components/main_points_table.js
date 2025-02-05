@@ -4,6 +4,8 @@ import {
     TableCell, Paper, TableHead, TableRow, TableContainer, Table, Divider, Box, CircularProgress
 } from '@material-ui/core';
 import '../components/components.css';
+import PreviousSeason from './previous_season';
+import Team from './manager_team';
 import { MANAGER_ID_NAME_MAP, MAX_TRANSFERS } from '../constants';
 import { ManagerHistoryParser } from '../parser/manager_history_parser';
 import { managerHistoryParserArchive } from '../data/season_22-23';
@@ -14,14 +16,20 @@ const MainPointsTable = props => {
 
     useEffect(() => {
 
-        // let managerHistoryParser = new ManagerHistoryParser();
-        // managerHistoryParser.getData().then(data => {
-        //     setManagerPointsData(data["detailed_manager_data"]);
-        //     setWeekWinners(data["winners"]);
-        // }).catch();
+        let managerHistoryParser = new ManagerHistoryParser();
+        managerHistoryParser.getData().then(data => {
+            setManagerPointsData(data["detailed_manager_data"]);
+            setWeekWinners(data["winners"]);
+            console.log("managerPointsData");
+            console.log(data);
+        }).catch();
 
-        setManagerPointsData(managerHistoryParserArchive["detailed_manager_data"]);
-            setWeekWinners(managerHistoryParserArchive["winners"]);
+
+        // ---------------
+        
+        // To disable network calls  and enable dummy data - uncomment this
+            // setManagerPointsData(managerHistoryParserArchive["detailed_manager_data"]);
+            // setWeekWinners(managerHistoryParserArchive["winners"]);
     }, []);
 
     const getGameweekHeader = () => {
@@ -54,18 +62,18 @@ const MainPointsTable = props => {
     return (
         <div className="root">
             <div style={{ padding: 10 }}>
-                <b>4 week points table: </b> 
+                <b>Points table: </b> 
             </div>
             {
-                managerPointsData == 0 &&
+                managerPointsData === 0 &&
 
                 <Box style={{ display: 'flex', justifyContent: 'center' }}>
                     <CircularProgress />
                 </Box>
             }
             {
-                managerPointsData != 0 &&
-
+                managerPointsData !== 0 &&
+                <div>
                 <TableContainer component={Paper}>
                     <Table>
                         <TableHead style={{ backgroundColor: '#D3D3D3' }}>
@@ -103,21 +111,36 @@ const MainPointsTable = props => {
                         </TableBody>
                     </Table>
                 </TableContainer>
+                                    
+                    {/*  To enable previous season points table, uncomment this 
+                    <div>
+                        <PreviousSeason />
+                    </div> 
+                    */}
+                </div>
+                
             }
-            <Divider style={{ marginTop: 20, marginBottom: 20 }} />
+            <Divider style={{ marginTop: 20, marginBottom: 20, height: 3}} />
+            
+            <div>
+                <Team gw={props.gw}/>
+            </div>
+            
+            <Divider style={{ marginTop: 20, marginBottom: 20, height: 3}} />
+
             <div style={{ padding: 10 }}>
-                <b>Gameweek points:</b>
+                <b>Per Gameweek points:</b>
             </div>
 
             {
-                managerPointsData == 0 &&
+                managerPointsData === 0 &&
 
                 <Box style={{ display: 'flex', justifyContent: 'center' }}>
                     <CircularProgress />
                 </Box>
             }
             {
-                managerPointsData != 0 &&
+                managerPointsData !== 0 &&
 
                 <TableContainer component={Paper}>
                     <Table>
